@@ -1,175 +1,189 @@
+/* Definindo estilos globais para todos os elementos da página */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui a borda e o preenchimento dentro das dimensões dos elementos */
 }
 
+/* Estilo geral do corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000000; /* Fundo preto para o site */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Alinha o título e a caixa centralizados */
-    height: 100vh;
-    color: #333; /* Texto escuro para contraste em fundo preto */
+    font-family: 'Arial', sans-serif; /* Define a fonte usada no corpo da página */
+    background-color: #000000; /* Define o fundo da página como preto */
+    display: flex; /* Usa o layout Flexbox para alinhar os elementos */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+    flex-direction: column; /* Alinha os elementos em uma coluna */
+    height: 100vh; /* A altura da página ocupa toda a altura da tela */
+    color: #333; /* Define a cor do texto como cinza escuro para contrastar com o fundo preto */
 }
 
+/* Estilo do título principal do jogo */
 #game-title {
-    font-size: 4rem; /* Tamanho do título duplicado */
-    color: #4CAF50;
-    margin-bottom: 20px; /* Espaço abaixo do título */
-    margin-top: 20px; /* Coloca o título um pouco distante do topo */
-    text-align: center;
-    animation: pulse 2s infinite, colorChange 6s infinite; /* Animações */
+    font-size: 4rem; /* Tamanho grande para o título */
+    color: #4CAF50; /* Cor verde para o título */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+    margin-top: 20px; /* Adiciona espaço acima do título */
+    text-align: center; /* Centraliza o texto */
+    animation: pulse 2s infinite, colorChange 6s infinite; /* Aplica animações no título */
 }
 
-/* Animação do título pulsando como um coração */
+/* Definição da animação "pulse" que faz o título pulsar */
 @keyframes pulse {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1); /* Tamanho original do título */
     }
     50% {
-        transform: scale(1.2); /* Cresce 20% no meio da animação */
+        transform: scale(1.2); /* Aumenta o título em 20% no meio da animação */
     }
 }
 
-/* Animação suave de troca de cores */
+/* Animação que muda a cor do título */
 @keyframes colorChange {
     0% {
-        color: #4CAF50; /* Cor inicial */
+        color: #4CAF50; /* Cor inicial verde */
     }
     25% {
-        color: #FF5722; /* Cor intermediária */
+        color: #FF5722; /* Cor intermediária laranja */
     }
     50% {
-        color: #3F51B5; /* Cor intermediária */
+        color: #3F51B5; /* Cor intermediária azul */
     }
     75% {
-        color: #009688; /* Cor intermediária */
+        color: #009688; /* Cor intermediária verde-azulado */
     }
     100% {
-        color: #4CAF50; /* Cor final */
+        color: #4CAF50; /* Cor final verde */
     }
 }
 
+/* Estilo do container onde os botões e elementos do jogo ficam */
 .container {
-    text-align: center;
-    background-color: #d8cd35; /* Fundo amarelo claro (cinza para amarelo claro) */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro do container */
+    background-color: #d8cd35; /* Define o fundo amarelo claro */
+    padding: 30px; /* Adiciona espaço dentro do container */
+    border-radius: 15px; /* Faz as bordas do container ficarem arredondadas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao redor do container */
 }
 
+/* Estilo do texto de instruções */
 #instruction-text {
-    font-size: 2rem; /* Tamanho atual do título */
+    font-size: 2rem; /* Tamanho do texto das instruções */
     color: blue; /* Cor azul para as instruções */
-    margin-top: 10px; /* Ajusta o espaçamento */
-    transform: scale(1.3); /* Aumenta o tamanho em 30% */
+    margin-top: 10px; /* Adiciona espaço acima das instruções */
+    transform: scale(1.3); /* Aumenta o tamanho das instruções em 30% */
 }
 
+/* Estilo para o container onde os botões das letras são gerados */
 .alphabet-buttons {
-    margin: 20px 0;
+    margin: 20px 0; /* Adiciona espaço acima e abaixo */
 }
 
+/* Estilo para os botões das letras do alfabeto */
 .letter-btn {
-    font-size: 2rem;
-    margin: 10px;
-    padding: 20px;
-    width: 80px;
-    height: 80px;
-    background-color: #ffffff;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
+    font-size: 2rem; /* Tamanho grande para os botões das letras */
+    margin: 10px; /* Espaço entre os botões */
+    padding: 20px; /* Tamanho do preenchimento dentro do botão */
+    width: 80px; /* Largura do botão */
+    height: 80px; /* Altura do botão */
+    background-color: #ffffff; /* Cor de fundo branca */
+    border: 2px solid #4CAF50; /* Borda verde ao redor do botão */
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o cursor de clique quando passar o mouse */
+    transition: all 0.3s; /* Transição suave para mudanças */
+    position: relative; /* Permite mover o botão em relação aos outros elementos */
 }
 
+/* Estilo do botão da letra quando o usuário passa o mouse */
 .letter-btn:hover {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Muda a cor de fundo para verde */
+    color: white; /* Muda a cor do texto para branco */
 }
 
-/* Animação para mover a letra para o centro e depois aumentar */
+/* Animação para mover e aumentar a letra */
 @keyframes moveAndEnlarge {
     0% {
-        transform: scale(1);
+        transform: scale(1); /* Tamanho original */
     }
     50% {
-        transform: translate(0, 0);
+        transform: translate(0, 0); /* Move para a posição normal */
     }
     100% {
-        transform: scale(7) translate(-50%, -50%);
+        transform: scale(7) translate(-50%, -50%); /* Aumenta e move para o centro da tela */
     }
 }
 
+/* Estilo para a letra que foi aumentada e movida para o centro da tela */
 .enlarged {
-    animation: moveAndEnlarge 3s ease forwards;  /* Aplica a animação de 3 segundos */
-    position: fixed;  /* Fixando a letra no centro da tela */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* Garantir que o item ficará exatamente no centro */
-    z-index: 10;  /* Garante que a letra fique em cima das outras */
+    animation: moveAndEnlarge 3s ease forwards; /* Aplica a animação de 3 segundos */
+    position: fixed; /* Fixando a letra no centro da tela */
+    top: 50%; /* Coloca no centro vertical */
+    left: 50%; /* Coloca no centro horizontal */
+    transform: translate(-50%, -50%); /* Garante que o centro da letra fique exatamente no meio da tela */
+    z-index: 10; /* Garante que a letra fique acima de outros elementos */
 }
 
-/* Feedback para a letra correta */
+/* Estilo para o feedback de resposta (Correto/Errado) */
 #feedback {
-    margin: 20px 0;
-    font-size: 2rem;
+    margin: 20px 0; /* Espaço acima e abaixo do feedback */
+    font-size: 2rem; /* Tamanho grande para o texto de feedback */
 }
 
+/* Estilo do botão "Iniciar" */
 #start-btn {
-    padding: 40px 80px; /* Dobrei o tamanho do botão */
-    font-size: 3rem; /* Aumentei o tamanho do texto */
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    padding: 40px 80px; /* Tamanho maior do botão */
+    font-size: 3rem; /* Tamanho grande do texto */
+    background-color: #4CAF50; /* Cor verde de fundo */
+    color: white; /* Cor do texto branca */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o cursor de clique */
 }
 
+/* Estilo do botão "Iniciar" quando o mouse passa por cima */
 #start-btn:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Cor verde mais escura ao passar o mouse */
 }
 
-/* Adicionando estilo para o botão de repetir a pronúncia */
+/* Estilo do botão "Repetir Pronúncia" */
 #repeat-btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: #FF9800; /* Laranja para o botão */
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
+    padding: 15px 30px; /* Tamanho do botão */
+    font-size: 1.2rem; /* Tamanho do texto */
+    background-color: #FF9800; /* Cor laranja para o botão */
+    color: white; /* Cor do texto branca */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra o cursor de clique */
+    margin-top: 20px; /* Espaço acima do botão */
 }
 
+/* Estilo do botão "Repetir Pronúncia" quando o mouse passa por cima */
 #repeat-btn:hover {
-    background-color: #FF5722;
+    background-color: #FF5722; /* Cor laranja mais escura ao passar o mouse */
 }
 
-/* Animação dos fogos de artifício, confetes e bexigas */
+/* Animação para fogos de artifício, confetes e bexigas */
 @keyframes fireworks {
     0% {
-        opacity: 1;
-        transform: scale(1);
+        opacity: 1; /* Inicia visível */
+        transform: scale(1); /* Tamanho normal */
     }
     100% {
-        opacity: 0;
-        transform: scale(5) rotate(360deg);
+        opacity: 0; /* Desaparece */
+        transform: scale(5) rotate(360deg); /* Cresce e gira durante a animação */
     }
 }
 
+/* Estilo dos fogos de artifício e confetes */
 .fireworks, .balloons {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #FF9800;
-    animation: fireworks 6.4s ease-out infinite;
+    position: absolute; /* Posiciona os elementos de forma absoluta na tela */
+    width: 10px; /* Tamanho pequeno */
+    height: 10px; /* Tamanho pequeno */
+    border-radius: 50%; /* Faz os elementos ficarem redondos */
+    background-color: #FF9800; /* Cor laranja para os fogos de artifício */
+    animation: fireworks 6.4s ease-out infinite; /* Aplica a animação de fogos */
 }
 
+/* Estilo das bexigas, que têm uma cor diferente */
 .balloons {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Cor verde para as bexigas */
 }
