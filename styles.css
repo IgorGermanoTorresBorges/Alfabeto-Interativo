@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Fundo preto para o site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinha o título e a caixa centralizados */
+    height: 100vh;
+    color: #333; /* Texto escuro para contraste em fundo preto */
+}
+
+#game-title {
+    font-size: 4rem; /* Tamanho do título duplicado */
+    color: #4CAF50;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    margin-top: 20px; /* Coloca o título um pouco distante do topo */
+    text-align: center;
+    animation: pulse 2s infinite, colorChange 6s infinite; /* Animações */
+}
+
+/* Animação do título pulsando como um coração */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Cresce 20% no meio da animação */
+    }
+}
+
+/* Animação suave de troca de cores */
+@keyframes colorChange {
+    0% {
+        color: #4CAF50; /* Cor inicial */
+    }
+    25% {
+        color: #FF5722; /* Cor intermediária */
+    }
+    50% {
+        color: #3F51B5; /* Cor intermediária */
+    }
+    75% {
+        color: #009688; /* Cor intermediária */
+    }
+    100% {
+        color: #4CAF50; /* Cor final */
+    }
+}
+
+.container {
+    text-align: center;
+    background-color: #d8cd35; /* Fundo amarelo claro (cinza para amarelo claro) */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#instruction-text {
+    font-size: 2rem; /* Tamanho atual do título */
+    color: blue; /* Cor azul para as instruções */
+    margin-top: 10px; /* Ajusta o espaçamento */
+    transform: scale(1.3); /* Aumenta o tamanho em 30% */
+}
+
+.alphabet-buttons {
+    margin: 20px 0;
+}
+
+.letter-btn {
+    font-size: 2rem;
+    margin: 10px;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.letter-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Animação para mover a letra para o centro e depois aumentar */
+@keyframes moveAndEnlarge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: scale(7) translate(-50%, -50%);
+    }
+}
+
+.enlarged {
+    animation: moveAndEnlarge 3s ease forwards;  /* Aplica a animação de 3 segundos */
+    position: fixed;  /* Fixando a letra no centro da tela */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Garantir que o item ficará exatamente no centro */
+    z-index: 10;  /* Garante que a letra fique em cima das outras */
+}
+
+/* Feedback para a letra correta */
+#feedback {
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+#start-btn {
+    padding: 40px 80px; /* Dobrei o tamanho do botão */
+    font-size: 3rem; /* Aumentei o tamanho do texto */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+}
+
+/* Adicionando estilo para o botão de repetir a pronúncia */
+#repeat-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #FF9800; /* Laranja para o botão */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#repeat-btn:hover {
+    background-color: #FF5722;
+}
+
+/* Animação dos fogos de artifício, confetes e bexigas */
+@keyframes fireworks {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(5) rotate(360deg);
+    }
+}
+
+.fireworks, .balloons {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF9800;
+    animation: fireworks 6.4s ease-out infinite;
+}
+
+.balloons {
+    background-color: #4CAF50;
+}

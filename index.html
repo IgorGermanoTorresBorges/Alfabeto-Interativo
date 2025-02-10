@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfabeto Divertido!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="game-title">Alfabeto Divertido!</h1> <!-- Título fora da caixa -->
+    <div class="container">
+        <p id="instruction-text" style="display: none;">Qual é a letra?</p> <!-- Vai aparecer só após iniciar o jogo -->
+
+        <div class="alphabet-buttons"></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <button id="start-btn" class="start-btn" onclick="startGame()">Iniciar!</button> <!-- Texto do botão alterado -->
+
+        <!-- Novo botão para repetir a pronúncia da letra -->
+        <button id="repeat-btn" class="repeat-btn" onclick="repeatPronunciation()" style="display:none;">Repetir Pronúncia</button>
+    </div>
+
+    <!-- Áudios para feedback e pronúncias -->
+    <audio id="correct-audio" src="audios/vitoria.mp3"></audio>
+    <audio id="error-audio" src="audios/erro.mp3"></audio>
+    <audio id="pronunciation-audio"></audio>
+    
+    <!-- Novo áudio de parabéns -->
+    <audio id="parabens-audio" src="audios/parabens.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
